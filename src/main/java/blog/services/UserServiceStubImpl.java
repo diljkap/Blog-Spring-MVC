@@ -11,4 +11,10 @@ public class UserServiceStubImpl implements UserService {
         //sample password check (username == password)
         return Objects.equals(username,password);
     }
+
+    @Override
+    public boolean registerValidation (String username) {
+        //sample username check (username is not null)
+        return Objects.nonNull(username);
+    }
 }

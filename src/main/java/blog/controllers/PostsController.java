@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class PostsController {
     @Autowired
@@ -26,5 +28,12 @@ public class PostsController {
         }
         model.addAttribute("post", post);
         return "posts/view";
+    }
+
+    @RequestMapping("/posts")
+    public String viewAll(Model model) {
+        List<Post> allPosts = postService.findAll();
+        model.addAttribute("allPosts", allPosts);
+        return "posts/viewAll";
     }
 }

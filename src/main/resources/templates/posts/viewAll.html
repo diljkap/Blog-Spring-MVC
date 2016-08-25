@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>List Posts</title>
+</head>
+
+<body>
+<header th:replace="layout :: site-header" />
+
+<main id="posts">
+        <table class="allposts">
+            <tr>
+                <th>Post Title</th>
+                <th>Date</th>
+                <th>Author</th>
+                <th>Content</th>
+            </tr>
+            <tr th:each="p : ${allPosts}">
+                <td><a href="#" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">1</a></td>
+                <td th:text="${#dates.format(p.date, 'dd-MM-yyyy')}">2</td>
+                <td><span th:if="${p.author}" th:remove="tag">
+                    <span th:text="${p.author.fullName != null ?
+                        p.author.fullName : p.author.username}">Dilyana Kapukaranova</span></span></td>
+                <td id="tcontent" th:utext="${p.body}">4</td>
+            </tr>
+        </table>
+</main>
+
+<footer th:replace="layout :: site-footer" />
+</body>
+
+</html>

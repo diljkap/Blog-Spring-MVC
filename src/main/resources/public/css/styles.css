@@ -77,3 +77,29 @@ ul#messages li.error {
     color: red;
     font-style: italic;
 }
+.allposts  {
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.allposts td {
+    text-align: center;
+    word-break:normal;
+    color:#333;
+    background-color:#fff;
+}
+.allposts td a {
+    text-decoration: none;
+}
+#tcontent {
+    text-align: left;
+    padding-left: 10px;
+}
+.allposts th{
+    padding:10px 5px;
+    overflow:hidden;
+    word-break:normal;
+    border-color:#ccc;
+    color:#333;
+    background-color:#f0f0f0;
+}

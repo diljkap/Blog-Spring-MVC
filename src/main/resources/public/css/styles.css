@@ -103,3 +103,11 @@ ul#messages li.error {
     color:#333;
     background-color:#f0f0f0;
 }
+#postTitle {
+    width: 400px;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+}
